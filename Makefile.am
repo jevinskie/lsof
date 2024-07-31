@@ -1,3 +1,5 @@
+ACLOCAL_AMFLAGS = -I m4
+
 # liblsof
 liblsof_la_SOURCES = lib/ckkv.c lib/cvfs.c lib/dvch.c lib/fino.c lib/isfn.c lib/lkud.c lib/lsof.c lib/misc.c lib/node.c lib/pdvn.c lib/prfp.c lib/print.c lib/proc.c lib/ptti.c lib/rdev.c lib/rnmt.c lib/rmnt.c lib/rnam.c lib/rnch.c lib/rnmh.c
 liblsof_la_SOURCES += lib/common.h lib/proto.h lib/hash.h

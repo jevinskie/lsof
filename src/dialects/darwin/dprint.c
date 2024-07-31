@@ -38,6 +38,9 @@ static char copyright[] = "@(#) Copyright 2005-2007 Apple Inc. and Purdue "
 
 #include "common.h"
 
+extern int my_putchar_unlocked(int c);
+#define putchar my_putchar_unlocked
+
 #if defined(PROC_FP_GUARDED)
 extern struct pff_tab Pgf_tab[];
 #endif /* defined(PROC_FP_GUARDED) */
