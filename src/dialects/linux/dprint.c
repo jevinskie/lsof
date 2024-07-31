@@ -31,6 +31,9 @@
 #include "common.h"
 #include "cli.h"
 
+extern int my_putchar_unlocked(int c);
+#define putchar my_putchar_unlocked
+
 #if defined(HASSOSTATE)
 #    include <linux/net.h> /* for SS_* */
 #endif                     /* defined(HASSOSTATE) */

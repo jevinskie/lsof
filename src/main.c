@@ -33,6 +33,16 @@
 #include "common.h"
 #include "cli.h"
 
+__attribute__((noinline,visibility("default"))) int my_putc_unlocked(int c, FILE *f) {
+    return putc_unlocked(c, f);
+}
+
+__attribute__((noinline,visibility("default"))) int my_putchar_unlocked(int c) {
+    return putchar_unlocked(c);
+}
+
+#define putchar my_putchar_unlocked
+
 /*
  * Local definitions
  */
@@ -107,6 +117,7 @@ int main(int argc, char *argv[]) {
     else
         Pn = argv[0];
     lsof_set_output_stream(ctx, stderr, Pn, 0);
+    setvbuf(stdout, NULL, _IOFBF, 0);
 
     /*
      * Close enough file descriptors above 2 that library functions will have

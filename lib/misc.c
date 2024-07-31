@@ -40,6 +40,9 @@
 #    endif /* defined(HASWCTYPE_H) */
 #endif     /* defined(HASWIDECHAR) */
 
+extern int my_putc_unlocked(int c, FILE *f);
+#define putc my_putc_unlocked
+
 /*
  * Local definitions
  */

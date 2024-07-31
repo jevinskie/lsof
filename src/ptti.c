@@ -33,6 +33,9 @@
 #include "common.h"
 #include "machine.h"
 
+extern int my_putchar_unlocked(int c);
+#define putchar my_putchar_unlocked
+
 #if defined(USE_LIB_PRINT_TCPTPI)
 
 /*

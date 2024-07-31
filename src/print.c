@@ -32,6 +32,9 @@
 #include "cli.h"
 #include "proto.h"
 
+extern int my_putchar_unlocked(int c);
+#define putchar my_putchar_unlocked
+
 /*
  * Local definitions, structures and function prototypes
  */
